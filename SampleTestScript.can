@@ -1,0 +1,75 @@
+/*@!Encoding:1252*/
+includes
+{
+  
+}
+
+variables
+{
+  
+}
+
+void MainTest ()
+{
+  TestModuleTitle ("To test DUT under Different speed");
+  TestModuleDescription ("Testing behaviour of the ECU in different speed min, mid and max");
+  TestGroupBegin("Boundary Test", "min mid and max test");
+  VehicleSpeedTest();
+ // Testcase2();
+  TestGroupEnd();
+
+}
+
+testcase VehicleSpeedTest()
+{
+  int result;
+  
+  setSignal(Speed::VehicleSpeed,0);   // set vehicle speed to zero
+  testWaitForTimeout(1000);  // wait for 1 sec
+  testValidateSignalMatch("Check Vehicle speed equals 0", Speed::VehicleSpeed,0);
+  result=testWaitForTesterConfirmation("Does Speedo point to zero?");
+  if(result==1)
+  {
+    
+    testStepPass("Speedo points to zero");
+  }
+  else
+  {
+    testStepFail("Speedo does not point to zero");
+    
+  }
+  
+  
+  setSignal(Speed::VehicleSpeed,120);   // set vehicle speed to 120
+  testWaitForTimeout(1000);  // wait for 1 sec
+  testValidateSignalMatch("Check Vehicle speed equals 120", Speed::VehicleSpeed,120);
+  result=testWaitForTesterConfirmation("Does Speedo point to 120 km/hr?");
+  if(result==1)
+  {
+    
+    testStepPass("Speedo points to 120 km/h");
+  }
+  else
+  {
+    testStepFail("Speedo does not point to 120 km/hr");
+    
+  }
+  
+  setSignal(Speed::VehicleSpeed,250);   // set vehicle speed to 250
+  testWaitForTimeout(1000);  // wait for 1 sec
+  testValidateSignalMatch("Check Vehicle speed equals 250", Speed::VehicleSpeed,250);
+  result=testWaitForTesterConfirmation("Does Speedo point to 250 km/hr?");
+  if(result==1)
+  {
+    
+    testStepPass("Speedo points to 250 km/h");
+  }
+  else
+  {
+    testStepFail("Speedo does not point to 250 km/hr");
+    
+  }
+  
+  
+  
+}

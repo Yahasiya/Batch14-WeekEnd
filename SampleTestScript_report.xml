@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<testmodule starttime="2022-06-05 09:54:52" timestamp="  10.560000" verdicts="2_basic" measurementid="9620be69-79a6-48d8-98fd-683672e3df61">
+  <violation timestamp="  10.560000" type="warning" result="warn">This is only a DEMO variant of CANoe!</violation>
+  <testgroup>
+    <testcase starttime="2022-06-05 09:54:52" timestamp="  10.560000">
+      <violation timestamp="  10.560000" type="warning" result="warn">This is only a DEMO variant of CANoe!</violation>
+      <teststep timestamp="  10.560000" level="2" type="user" ident="Set signal value" result="na">Signal: &apos;Signal:CAN1/Sample_Database/Speed/VehicleSpeed&apos;.  Value: 0 </teststep>
+      <teststep timestamp="  11.560000" level="1" type="auto" ident="Resume reason" result="na">Elapsed time=1000ms (max=1000ms)</teststep>
+      <teststep timestamp="  11.560000" level="2" type="user" ident="Check Vehicle speed equals 0" result="pass">Value match check of signal &apos;Signal:CAN1/Sample_Database/Speed/VehicleSpeed&apos;: Compare Value: 0 --&gt; Measured signal value: 0</teststep>
+      <teststep timestamp="  26.290000" level="0" type="user" ident="" result="na">Tester confirmation with &apos;Yes&apos;.</teststep>
+      <teststep timestamp="  26.290000" type="user" ident="" result="pass">Speedo points to zero</teststep>
+      <teststep timestamp="  26.290000" level="2" type="user" ident="Set signal value" result="na">Signal: &apos;Signal:CAN1/Sample_Database/Speed/VehicleSpeed&apos;.  Value: 120 </teststep>
+      <teststep timestamp="  27.290000" level="1" type="auto" ident="Resume reason" result="na">Elapsed time=1000ms (max=1000ms)</teststep>
+      <teststep timestamp="  27.290000" level="0" type="user" ident="Check Vehicle speed equals 120" result="fail">Value match check of signal &apos;Signal:CAN1/Sample_Database/Speed/VehicleSpeed&apos;: Compare Value: 120 --&gt; Measured signal value: 0</teststep>
+      <violation timestamp="  70.560000" type="program" result="fail">This is only a DEMO variant of CANoe! Measurement was aborted because test execution time exceeds 60 seconds.</violation>
+      <!-- Measurement stop forced. Test is incomplete! -->
+      <verdict time="2022-06-05 09:55:12" timestamp="  27.290000" endtime="2022-06-05 09:56:01" endtimestamp="  70.560000" result="fail" />
+      <title>VehicleSpeedTest</title>
+      <extendedinfo type="html"><![CDATA[<b>Measurement stop forced. Test is incomplete!</b>]]></extendedinfo>
+    </testcase>
+    <title>Boundary Test</title>
+    <description>min mid and max test</description>
+  </testgroup>
+  <verdict time="2022-06-05 09:55:12" timestamp="  27.290000" endtime="2022-06-05 09:56:01" endtimestamp="  70.560000" result="fail" />
+  <title>To test DUT under Different speed</title>
+  <description>Testing behaviour of the ECU in different speed min, mid and max</description>
+  <testlogfiles>
+  </testlogfiles>
+  <engineer>
+    <xinfo>
+      <name>Windows Login Name</name>
+      <description>ansar</description>
+    </xinfo>
+  </engineer>
+  <testsetup>
+    <xinfo>
+      <name>Version</name>
+      <description>CANoe.ISO11783.J1939.CANopen.CAN.LIN.MOST.FlexRay.J1587.Ethernet.Car2x.AFDX.A429.Scope.SmartCharging [DEMO] 15.2.41 (SP2)</description>
+    </xinfo>
+    <xinfo>
+      <name>Configuration</name>
+      <description>C:\Users\ansar\Desktop\SampleDatabase.cfg</description>
+    </xinfo>
+    <xinfo>
+      <name>Database SampleDatabase on Sample_Database</name>
+      <description>C:\Users\ansar\Desktop\Databases\SampleDatabase.dbc (2022-06-05 09:51:16)</description>
+    </xinfo>
+    <xinfo>
+      <name>Test Module Name</name>
+      <description>SampleTestScript</description>
+    </xinfo>
+    <xinfo>
+      <name>Test Module File</name>
+      <description>C:\YAHASIYASOFTWARE\Software_Trainings\Batch14_WeekEnd\SampleTestScript.can</description>
+    </xinfo>
+    <xinfo>
+      <name>Last modification of Test Module File</name>
+      <description>2022-06-05, 08:28:19</description>
+    </xinfo>
+    <xinfo>
+      <name>Windows Computer Name</name>
+      <description>DESKTOP-KH48OJ4</description>
+    </xinfo>
+    <xinfo>
+      <name>Nodelayer Module J1939TestServiceLibraryNL</name>
+      <description>J1939 Test Service Library for CANoe, Version 15.2.41.0, C:\Program Files\Vector CANoe 15\Exec32\J1939TestServiceLibraryNL.dll</description>
+    </xinfo>
+    <xinfo>
+      <name>Nodelayer Module CANoeILNLVector</name>
+      <description>CANoe Interaction Layer NL (Vector) Version 3.30.95 (Mar 24 2021 10:43:19) , c:\ProgramData\Vector\AddOn Packages\Vector AddOn\vModules\CANoe_14_0\Exec32\CANoeILNLVector.dll</description>
+    </xinfo>
+    <xinfo>
+      <name>Nodelayer Module osek_tp</name>
+      <description>OSEK_TP (VC15, Version 5.32.76 32bit MSC15.0, Build 76), C:\Program Files\Vector CANoe 15\Exec32\osek_tp.dll</description>
+    </xinfo>
+  </testsetup>
+  <extendedinfo type="html"><![CDATA[<b>Measurement stop forced. Test is incomplete!</b>]]></extendedinfo>
+</testmodule>
+<!--footprint="1dfee6fdbfae439f15290984e0a03870" version="1"-->
