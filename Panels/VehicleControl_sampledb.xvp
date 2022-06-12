@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Panel Type="Vector.CANalyzer.Panels.PanelSerializer, Vector.CANalyzer.Panels.Serializer, Version=15.2.41.0, Culture=neutral, PublicKeyToken=null">
+  <Object Type="Vector.CANalyzer.Panels.Runtime.Panel, Vector.CANalyzer.Panels.Common, Version=15.2.41.0, Culture=neutral, PublicKeyToken=null" Name="Panel" Children="Controls" ControlName="VehicleControl_sampledb">
+    <Object Type="Vector.CANalyzer.Panels.Design.MeterControl, Vector.CANalyzer.Panels.CommonControls, Version=15.2.41.0, Culture=neutral, PublicKeyToken=null" Name="MeterControl2" ControlName="Meter 2">
+      <Property Name="Name">MeterControl2</Property>
+      <Property Name="Size">94, 106</Property>
+      <Property Name="Location">131, 238</Property>
+      <Property Name="ScaleMax">8000</Property>
+      <Property Name="SymbolConfiguration">8;2;Sample_Database;PCM;EngineData;EngSpeed;1;CAN1;;-1;;;;;;0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.MeterControl, Vector.CANalyzer.Panels.CommonControls, Version=15.2.41.0, Culture=neutral, PublicKeyToken=null" Name="MeterControl1" ControlName="Meter 1">
+      <Property Name="Name">MeterControl1</Property>
+      <Property Name="Size">108, 127</Property>
+      <Property Name="Location">383, 226</Property>
+      <Property Name="ScaleMax">255</Property>
+      <Property Name="SymbolConfiguration">8;2;Sample_Database;PCM;Speed;VehicleSpeed;1;CAN1;;-1;;;;;;0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.PictureBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=15.2.41.0, Culture=neutral, PublicKeyToken=null" Name="PictureBoxControl1" ControlName="Picture Box 1">
+      <Property Name="Name">PictureBoxControl1</Property>
+      <Property Name="Size">537, 318</Property>
+      <Property Name="Location">39, 97</Property>
+      <Property Name="ImageFile">..\bitmaps\DashboardCombi.png</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.TrackBarControl, Vector.CANalyzer.Panels.CommonControls, Version=15.2.41.0, Culture=neutral, PublicKeyToken=null" Name="TrackBarControl1" Children="Controls" ControlName="Track Bar 1">
+      <Property Name="Name">TrackBarControl1</Property>
+      <Property Name="Size">544, 47</Property>
+      <Property Name="Location">32, 34</Property>
+      <Property Name="MaximumSize">100000, 47</Property>
+      <Property Name="Maximum">255</Property>
+      <Property Name="MaximumDouble">255</Property>
+      <Property Name="SymbolConfiguration">8;2;Sample_Database;PCM;Speed;VehicleSpeed;1;CAN1;;-1;;;;;;0</Property>
+      <Property Name="TabIndex">0</Property>
+    </Object>
+    <Property Name="Name">Panel</Property>
+    <Property Name="Size">733, 449</Property>
+    <Property Name="BackColor">White</Property>
+  </Object>
+</Panel>
