@@ -1,0 +1,55 @@
+/*@!Encoding:1252*/
+includes
+{
+  
+}
+
+variables
+{
+  
+}
+
+on start
+{
+  write("I am from on start");
+}
+
+on preStop
+{
+  write("I am from on prestop");
+  
+}
+
+on message 0x230
+{
+  
+  if(this.CruiseSwitchRequest==0x7)
+  {
+    write("Default value of Cruisesw request is correct");
+  }
+  else
+    
+   {
+     write("There is a issue with default value for cruisesw req");
+   }
+  
+  
+  
+  
+}
+
+on sysvar samplesysvar
+{
+  write("I am changed");
+}
+
+on stopMeasurement
+{
+  write("I am from on stop");
+}
+
+on preStart
+{
+  write("I am from on prestart");
+}
+
