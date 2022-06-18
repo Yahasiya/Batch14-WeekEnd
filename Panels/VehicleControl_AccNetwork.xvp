@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<Panel Type="Vector.CANalyzer.Panels.PanelSerializer, Vector.CANalyzer.Panels.Serializer, Version=15.2.41.0, Culture=neutral, PublicKeyToken=null">
+  <Object Type="Vector.CANalyzer.Panels.Runtime.Panel, Vector.CANalyzer.Panels.Common, Version=15.2.41.0, Culture=neutral, PublicKeyToken=null" Name="Panel" Children="Controls" ControlName="VehicleControl_AccNetwork">
+    <Object Type="Vector.CANalyzer.Panels.Design.HexEditorControl, Vector.CANalyzer.Panels.CommonControls, Version=15.2.41.0, Culture=neutral, PublicKeyToken=null" Name="HexEditorControl1" Children="Controls" ControlName="Hex/Text Editor 1">
+      <Property Name="Name">HexEditorControl1</Property>
+      <Property Name="Size">244, 88</Property>
+      <Property Name="Location">10, 246</Property>
+      <Property Name="SymbolDataType">String</Property>
+      <Property Name="SymbolConfiguration">8;16;;;;ICM_Info_Msg;4;;;-1;;;;;;0</Property>
+      <Property Name="TabIndex">9</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.PanelHelpControl, Vector.CANalyzer.Panels.CommonControls, Version=15.2.41.0, Culture=neutral, PublicKeyToken=null" Name="PanelHelpControl1" Children="Controls" ControlName="File Button 1">
+      <Property Name="Name">PanelHelpControl1</Property>
+      <Property Name="Size">23, 24</Property>
+      <Property Name="Location">458, 273</Property>
+      <Property Name="Image">iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADWSURBVDhP5ZS9DcIwEEY9EiUFRUZhBDaABfJT0kRIriI5lRdIKlJQUEViATo6Bjh8kU0Sy5gPCSqe9JTqnhydbPFT8jxfZFnWvLMoipUdiWOCiZG6rguqtaa6rslE71DUBV+hlBrCbdtiUTTIQNFPgoyLpmm6tIk50+DmSJToUYaDZVkOX6eUkszMzibmTIOHC9H2NMr0ff9ckLOqKix4vhE117gMnxIK8m+KfVwGDqLAQX8pIRk46C8lJAMH/3ApKFDQvw0x+SrGgtAD62vm1jbxbYR4ANKWKtnorsGqAAAAAElFTkSuQmCC</Property>
+      <Property Name="Filename">..\releasenotes.rtf</Property>
+      <Property Name="Application">C:\Program Files\Windows NT\Accessories\wordpad.exe</Property>
+      <Property Name="WorkingDirectory">C:\Program Files\Windows NT\Accessories</Property>
+      <Property Name="Text">
+      </Property>
+      <Property Name="TabIndex">8</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ComboBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=15.2.41.0, Culture=neutral, PublicKeyToken=null" Name="ComboBoxControl1" Children="Controls" ControlName="Combo Box 1">
+      <Property Name="Name">ComboBoxControl1</Property>
+      <Property Name="Size">175, 24</Property>
+      <Property Name="Location">372, 211</Property>
+      <Property Name="BackColor">Window</Property>
+      <Property Name="ForeColor">WindowText</Property>
+      <Property Name="TextBackColor">White</Property>
+      <Property Name="DisplayLabel">Left</Property>
+      <Property Name="DescriptionText">ACCState:</Property>
+      <Property Name="DescriptionSize">54, 19</Property>
+      <Property Name="SymbolConfiguration">8;2;ACC_Vehicle_Network_v01;ACC;ACCInfo;ACCState;1;CAN;;-1;;;;;;0</Property>
+      <Property Name="TabIndex">6</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.CheckBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=15.2.41.0, Culture=neutral, PublicKeyToken=null" Name="CheckBoxControl2" Children="Controls" ControlName="Check Box 2">
+      <Property Name="Name">CheckBoxControl2</Property>
+      <Property Name="Size">94, 16</Property>
+      <Property Name="Location">471, 149</Property>
+      <Property Name="Text">ACC fault</Property>
+      <Property Name="CheckValueVTXml">&lt;Version&gt;2&lt;/Version&gt;&lt;LowerUpper&gt;Lower&lt;/LowerUpper&gt;&lt;RxValue&gt;4&lt;/RxValue&gt;</Property>
+      <Property Name="CheckValueVT">1;Lower;4</Property>
+      <Property Name="CheckValue">4</Property>
+      <Property Name="SymbolConfiguration">8;2;ACC_Vehicle_Network_v01;ACC;ACCInfo;ACCState;1;CAN;;-1;;;;;;0</Property>
+      <Property Name="TabIndex">5</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=15.2.41.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl1" Children="Controls" ControlName="Button 1">
+      <Property Name="Name">ButtonControl1</Property>
+      <Property Name="Size">72, 22</Property>
+      <Property Name="Location">484, 53</Property>
+      <Property Name="ReleaseValueVTXml">&lt;Version&gt;2&lt;/Version&gt;&lt;LowerUpper&gt;Lower&lt;/LowerUpper&gt;&lt;RxValue&gt;7&lt;/RxValue&gt;</Property>
+      <Property Name="ReleaseValueVT">1;Lower;7</Property>
+      <Property Name="ReleaseValue">7</Property>
+      <Property Name="PressValueVTXml">&lt;Version&gt;2&lt;/Version&gt;&lt;LowerUpper&gt;Lower&lt;/LowerUpper&gt;&lt;RxValue&gt;0&lt;/RxValue&gt;</Property>
+      <Property Name="PressValueVT">1;Lower;0</Property>
+      <Property Name="PressValue">0</Property>
+      <Property Name="Text">Off</Property>
+      <Property Name="SymbolConfiguration">8;2;ACC_Vehicle_Network_v01;ICM;ICMInfo;CruiseSwitchRequest;1;CAN;;-1;;;;;;0</Property>
+      <Property Name="TabIndex">1</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.AnalogGaugeControl, Vector.CANalyzer.Panels.AnalogGauge, Version=15.2.41.0, Culture=neutral, PublicKeyToken=null" Name="AnalogGaugeControl1" ControlName="Analog Gauge 1">
+      <Property Name="Name">AnalogGaugeControl1</Property>
+      <Property Name="Size">225, 180</Property>
+      <Property Name="Location">29, 29</Property>
+      <Property Name="BackgroundColor">White</Property>
+      <Property Name="CriticalProps" Member="AAEAAAD/////AQAAAAAAAAAEAQAAAC9TeXN0ZW0uUmVmbGVjdGlvbi5NZW1iZXJJbmZvU2VyaWFsaXphdGlvbkhvbGRlcgcAAAAETmFtZQxBc3NlbWJseU5hbWUJQ2xhc3NOYW1lCVNpZ25hdHVyZQpTaWduYXR1cmUyCk1lbWJlclR5cGUQR2VuZXJpY0FyZ3VtZW50cwEBAQEBAAMIDVN5c3RlbS5UeXBlW10GAgAAAAUuY3RvcgYDAAAAXFZlY3Rvci5DQU5hbHl6ZXIuUGFuZWxzLkFuYWxvZ0dhdWdlLCBWZXJzaW9uPTE1LjIuNDEuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsBgQAAAA2VmVjdG9yLkNBTmFseXplci5QYW5lbHMuRGVzaWduLkdhdWdlQ3JpdGljYWxQcm9wZXJ0aWVzBgUAAAAyVm9pZCAuY3RvcihEb3VibGUsIERvdWJsZSwgRG91YmxlLCBEb3VibGUsIERvdWJsZSkGBgAAAFAuY3RvcihTeXN0ZW0uRG91YmxlLCBTeXN0ZW0uRG91YmxlLCBTeXN0ZW0uRG91YmxlLCBTeXN0ZW0uRG91YmxlLCBTeXN0ZW0uRG91YmxlKQEAAAAKCw==">
+        <Argument>0</Argument>
+        <Argument>255</Argument>
+        <Argument>0</Argument>
+        <Argument>40</Argument>
+        <Argument>100</Argument>
+      </Property>
+      <Property Name="GaugeFont">Microsoft Sans Serif, 7.8pt</Property>
+      <Property Name="LegendText">km/h</Property>
+      <Property Name="CurrentPosition">0</Property>
+      <Property Name="LowerRangeLimit">40</Property>
+      <Property Name="UpperRangeLimit">100</Property>
+      <Property Name="ScaleMin">0</Property>
+      <Property Name="ScaleMax">255</Property>
+      <Property Name="SymbolConfiguration">8;2;ACC_Vehicle_Network_v01;BCM;BCMInfo;VehicleSpeed;1;CAN;;-1;;;;;;0</Property>
+    </Object>
+    <Object Type="Vector.CANalyzer.Panels.Design.GroupBoxControl, Vector.CANalyzer.Panels.CommonControls, Version=15.2.41.0, Culture=neutral, PublicKeyToken=null" Name="GroupBoxControl1" ControlName="Group Box 1">
+      <Property Name="Name">GroupBoxControl1</Property>
+      <Property Name="Size">98, 100</Property>
+      <Property Name="Location">468, 29</Property>
+      <Property Name="Text">Cruise SW</Property>
+      <Property Name="TabIndex">2</Property>
+    </Object>
+    <Property Name="Name">Panel</Property>
+    <Property Name="Size">580, 463</Property>
+    <Property Name="BackColor">White</Property>
+  </Object>
+</Panel>
