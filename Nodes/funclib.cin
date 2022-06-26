@@ -1,0 +1,37 @@
+/*@!Encoding:1252*/
+dword Power(int x, int y)
+{
+  int i=1;
+  long result;
+  result=1;
+  for(i=1;i<=y;i++)
+  
+    result *=x;
+  
+  
+  return result;
+}
+
+
+void myfunc()
+{
+  byte value=10;
+  write("\nValue=%d",value);
+  value=35;
+  
+}
+
+void printme(double num)
+{
+  
+  write("The number is %f",num);
+  
+  
+}
+
+void printme(int num, char units[])
+{
+  
+  write("%d %s",num,units);
+  
+}

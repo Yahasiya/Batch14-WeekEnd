@@ -1,0 +1,63 @@
+/*@!Encoding:1252*/
+includes
+{
+  
+}
+
+variables
+{
+   int brakesw2req;
+   int vehiclespeed;
+}
+
+on message ICMInfo
+{
+  
+     switch(this.CruiseSwitchRequest)
+    {
+      
+      case 0:
+               setSignal(ACCInfo::ACCState,0);
+               break;
+      case 1:
+               setSignal(ACCInfo::ACCState,2);   // Set Acc state to stand by
+               break;
+     
+      case 2:
+      
+              if(this.BrakeSwitch1==0 && brakesw2req==0 && vehiclespeed > 40)
+            {
+              setSignal(ACCInfo::ACCState,3);
+            }
+            break;
+            
+      case 3:
+             setSignal(ACCInfo::ACCState,2);
+             break;
+       case 4:
+             setSignal(ACCInfo::ACCState,3);
+             break;
+      case 5:
+             break;
+      case 6:
+             break;
+      default:
+             break;
+      
+    };
+  
+ 
+  
+}
+
+on message BCMInfo
+{
+  vehiclespeed=this.VehicleSpeed;
+}
+
+on message ECMInfo
+{
+  brakesw2req=this.BrakeSwitch2;
+  
+}
+

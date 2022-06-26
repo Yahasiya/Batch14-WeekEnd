@@ -25,7 +25,7 @@ on message 0x230
   
   if(this.CruiseSwitchRequest==0x7)
   {
-    write("Default value of Cruisesw request is correct");
+ //   write("Default value of Cruisesw request is correct");
   }
   else
     

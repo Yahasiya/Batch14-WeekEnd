@@ -1,0 +1,121 @@
+/*@!Encoding:1252*/
+includes
+{
+  #include "funclib.cin"
+  
+}
+
+variables
+{
+  char letter_a='a';
+  int number_days_in_year=365;
+  message BCMInfo _mBCMInfo;
+  mstimer one_sec;
+  int j,k=2;
+  double x=33.7;
+  char p;
+  int vehiclespeed_samples[10]={0,60,120,150,180,220,80,55,35,10};
+  int index=0;
+  char ECUname[10]={'B','C','M'};
+}
+
+on key 'a'
+{
+  
+  int k;
+  
+  
+  printme(3.89);
+  printme(25,"kg");
+  
+ //k= Power(2,6);
+  
+   //write("2 ^ 6  = %d",k);
+  
+  // setTimer(one_sec,1000);
+  
+   /* write("Value of letter a is %c",letter_a);
+   write("Value  number_days_in_year =%d",number_days_in_year);
+   _mBCMInfo.VehicleSpeed.phys=35;
+   output(_mBCMInfo);
+  write("values of j,k are %d,%d",j,k);
+  write("value of x is %f",x);
+  write("Value of p is %c",p);*/
+  
+ // myfunc();
+  
+  
+  
+}
+
+
+
+
+on start
+{
+  write("I am %s",ECUname);
+}
+
+on timer one_sec
+{
+  
+   setSignal(BCMInfo::VehicleSpeed,vehiclespeed_samples[index++ % 10 ]);  
+   setTimer(one_sec,1000);
+   //setSignal(BCMInfo::VehicleSpeed,vehiclespeed_samples[index++ % 10 ]);  //
+   
+   /*write("Value of letter a is %c",letter_a);
+   write("Value  number_days_in_year =%d",number_days_in_year);
+   _mBCMInfo.VehicleSpeed.phys=35;
+   output(_mBCMInfo);
+  write("values of j,k are %d,%d",j,k);
+  write("value of x is %f",x);
+  write("Value of p is %c",p);*/
+  
+  
+  
+  
+}
+
+on key 'c'
+{
+  int rider;
+  rider=0;
+  
+ // while(rider<10)
+  
+ // for(rider=0;rider<10;rider++)
+  
+  do
+  {
+    
+    vehiclespeed_samples[rider]=random(80);
+    if(vehiclespeed_samples[rider] >76)
+      //continue;
+      break;
+    write("vehilespeed[%d]=%d",rider,vehiclespeed_samples[rider]);
+    rider++;
+    
+  }while(rider<10);
+   
+  
+  
+  
+}
+
+
+
+on key *
+{
+  write("you pressed key %c",this);
+}
+
+on sysvar samplesysvar
+{
+  if(@this)
+  {
+    write("You have pressed sample sysvar");
+  }
+  
+  
+}
+
