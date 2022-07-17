@@ -1,0 +1,63 @@
+/*@!Encoding:1252*/
+includes
+{
+  
+}
+
+variables
+{
+  
+}
+
+on message ICMInfo
+{
+  switch(this.CruiseSwitchRequest)
+  {
+    case 0:
+            setSignal(ACCInfo::ACCState,0);
+            setSignal(ACCInfo::ACCDriverInf,0);
+            break;
+    case 1:
+            setSignal(ACCInfo::ACCState, 2);
+            setSignal(ACCInfo::ACCDriverInf,2);
+            break;
+    case 2:
+            if(getSignal(ACCInfo::ACCState)==2)
+            {
+              setSignal(ACCInfo::ACCState,3);
+              setSignal(ACCInfo::ACCDriverInf,3);
+            }
+            
+            break;
+    case 3:
+            break;
+      
+    case 4:
+            break;
+      
+     case 5:
+            break;
+      
+     case 6:
+            break;
+            
+  }
+  if(this.BrakeSwitch1 ==1 && getSignal(ACCInfo::ACCState)==3) 
+  {
+   setSignal(ACCInfo::ACCState,2);
+   setSignal(ACCInfo::ACCDriverInf,2);
+  }
+  
+  
+}
+//due to this message coming from another ECU, So we are going another on message
+on message ECMInfo
+{
+  if(this.BrakeSwitch2 ==1 && getSignal(ACCInfo::ACCState)==3) 
+  {
+   setSignal(ACCInfo::ACCState,2);
+   setSignal(ACCInfo::ACCDriverInf,2);
+  }
+  
+}
+

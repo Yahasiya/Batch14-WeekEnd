@@ -1,0 +1,23 @@
+/*@!Encoding:1252*/
+includes
+{
+  
+}
+
+variables
+{
+  
+}
+
+on message ACCInfo
+{
+  if(this.BrakeDecelReques == 1)
+  {
+    @sysvar::ACCSystem::BrakeLights=1;
+  }
+  else
+  {
+    @sysvar::ACCSystem::BrakeLights=0;
+  }
+}
+
