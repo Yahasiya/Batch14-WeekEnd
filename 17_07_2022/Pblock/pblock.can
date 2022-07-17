@@ -1,0 +1,40 @@
+/*@!Encoding:1252*/
+includes
+{
+  
+}
+
+variables
+{
+  
+}
+
+on message *
+{
+  //if(this.id > 0x300)
+  {
+    // displaying CAN ID on trace window
+    output(this);
+  }
+  
+}
+
+
+on key 'a'
+{
+ // sysMinimize();
+  
+  
+}
+
+on message BCMInfo
+{
+  if(this.VehicleSpeed > 60)
+  {
+    write("beepspund");
+    msgBeep(1);
+  }
+  output(this);
+  
+}
+

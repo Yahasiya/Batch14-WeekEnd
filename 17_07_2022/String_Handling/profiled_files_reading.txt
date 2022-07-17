@@ -1,0 +1,14 @@
+//profile is need to read multiple entry in the file
+[vehiclespeed]
+v1 = 0
+v2 = 25
+v3 = 55
+v4 = 60
+v5 = 100
+v6 = 5
+
+[Accstate]
+A1 = 0
+A2 = 1
+A3 = 2
+A4 = 3

@@ -1,0 +1,200 @@
+/*@!Encoding:1252*/
+includes
+{
+ // #include"funclib.cin"
+  
+}
+
+variables
+{
+  timer one_sec;
+  int vehiclespeed[10]={0,60,120,150,180,220,80,50,35,10};
+  char  ECUName[10]={'B','C','M','N','O','D','E'};
+  int index=0;
+  int speed =200;
+  int i;
+  char buffer[200];
+  int handle;
+}
+
+on sysvar BDM_ON_OFF
+{
+  if(@this)
+  {
+    ILControlStop();
+  }
+  else
+  {
+    ILControlStart();
+  }
+}
+
+on key *
+{
+  write("your pressing key from keyboard is %c",this); 
+}
+
+on key 'c'
+{
+  int rider =0;
+  while(rider <10)
+  {
+    vehiclespeed[rider] =random(100);
+    write(" the vehiclespeed is [%d] =%d",rider,vehiclespeed[rider]);
+    rider++;
+  }
+  
+}
+
+on sysvar samplesysvar
+{
+  if(@this)
+  {
+     write("Pressing sys variable");
+  }
+ 
+}
+
+on key 'd'
+{
+  int randomvehiclespeed =0;
+  for (randomvehiclespeed =0; randomvehiclespeed<10;randomvehiclespeed++)
+  {
+    vehiclespeed[randomvehiclespeed] = random(80);
+    write("random vehcile speed %d",vehiclespeed[randomvehiclespeed]);
+    
+  }
+  
+}
+
+on key 'a'
+{
+  
+  
+  setTimer(one_sec,1);
+  
+}
+
+on key 'e'
+{
+  int rider =0;
+  while(rider <10)
+  {
+    vehiclespeed[rider] =random(100);
+    if(vehiclespeed[rider] > 70)
+    {
+      //write("vehicle speed is less then 25");
+      continue;
+    }
+    
+    write(" the vehiclespeed is [%d] =%d",rider,vehiclespeed[rider]);
+    rider++;
+  }
+}
+
+on key 'f'
+  
+{
+  int rider =0;
+  while(rider <10)
+  {
+    vehiclespeed[rider] =random(100);
+    if(vehiclespeed[rider] > 70)
+    {
+      //write("vehicle speed is less then 25");
+      break;
+    }
+    
+    write(" the vehiclespeed is [%d] =%d",rider,vehiclespeed[rider]);
+    rider++;
+  }
+}
+
+
+
+on key 'x'
+{
+ // write("2^6 =%d",power(2,6));
+  
+}
+
+on preStart
+{
+  write("I am from prestart\n");
+}
+
+on timer one_sec
+{
+  //setSignal(BCMInfo::VehicleSpeed,vehiclespeed[index++%10]);
+ //setTimer(one_sec,1);// if not restarting the time, it will collect only one sample and stop.
+  //for cycling operation we are initialising the time here.
+  /*
+   for( i=0;i<=200;i++)
+  {
+   
+    write("***Inside for loop***%d",i);
+    setSignal(BCMInfo::VehicleSpeed,2+i);
+    setTimer(one_sec,1);
+  }*/
+  int result;
+  result=fileGetString(buffer,elcount(buffer),handle);
+  if(result==1)
+  {
+    setSignal(BCMInfo::VehicleSpeed,atol(buffer));
+    //setTimer(one_sec,1);
+  }
+  else
+  {
+    fileRewind(handle);
+    result=fileGetString(buffer,elcount(buffer),handle);
+    setSignal(BCMInfo::VehicleSpeed,atol(buffer));
+    
+  }
+  setTimer(one_sec,1);
+ 
+ 
+}
+
+
+on start
+{
+  write("*****I am from On start*****\n");
+  write("I am %s",ECUName);
+  
+  handle=openFileRead("F:\\Nagu\\Personal\\CAN\\String_Handling\\vehicleSpeedSamples.txt",0);
+  setTimer(one_sec,1);
+}
+
+on sysvar_update Start_logging
+{
+  if (@this)
+  {
+    sysGetVariableString(sysvar::Log_File_Name,buffer, elCount(buffer));
+    setLogFileName(buffer);
+    startLogging();
+  }
+}
+
+on sysvar_update Stop_logging
+{
+  if(@this)
+  {
+    stopLogging();
+  }
+  
+}
+
+
+
+on message BCMInfo
+{
+  if(this.VehicleSpeed > 120)
+  {
+    writeToLog("overspeed, now vehicle is speed is>70");
+  }
+  
+  
+}
+
+
+
