@@ -6,11 +6,54 @@ includes
 
 variables
 {
-  
+  timer one_sec;
+  int AccState;
+  int target_speed;
 }
+
+
 
 on start
 {
-  write("Wecome to CAPL Browser. This is my first CAPL Program");
+  setTimer(one_sec,1);
+}
+on timer one_sec
+{
+  if(AccState ==3)
+  {
+    if(target_speed < getSignal(BCMInfo::VehicleSpeed))
+    {
+      setSignal(BCMInfo::VehicleSpeed,getSignal(BCMInfo::VehicleSpeed)-5);
+      
+    }
+    else
+    {
+       setSignal(BCMInfo::VehicleSpeed,getSignal(BCMInfo::VehicleSpeed)+5);
+    }
+  }
+  setTimer(one_sec,1);
+}
+
+on sysvar ACCSystem::IG_Key
+{
+  if(@this==0)
+  {
+    setSignal(BCMInfo::VehicleSpeed,0);
+  }
+  
+}
+
+on message ACCInfo
+{
+  AccState= this.ACCState; 
+  target_speed=this.TargetSpeed;
+  if(this.BrakeDecelReques == 1)
+  {
+    @sysvar::ACCSystem::BrakeLights=1;
+  }
+  else
+  {
+    @sysvar::ACCSystem::BrakeLights=0;
+  }
 }
 
